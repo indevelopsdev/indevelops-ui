@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  color-scheme: dark;
+  --color-bg: #05060a;
+  --color-bg-elevated: rgba(7, 12, 19, 0.85);
+  --color-surface: #0f1623;
+  --color-border: rgba(48, 240, 194, 0.35);
+  --color-text: #e4e7ec;
+  --color-muted: #8a94a6;
+  --color-accent: #30f0c2;
+  --color-accent-soft: #84e6ff;
+  --shadow-soft: 0 20px 60px rgba(3, 10, 20, 0.65);
+  --font-sans: 'Space Grotesk', 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  --max-width: 1200px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(132, 230, 255, 0.12), transparent 40%),
+    radial-gradient(circle at 20% 20%, rgba(48, 240, 194, 0.18), transparent 45%),
+    var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  padding: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+a.sr-only,
+span.sr-only,
+label.sr-only,
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+footer {
+  color: var(--color-muted);
+  font-size: 0.85rem;
+}
+
+footer a {
+  color: var(--color-accent-soft);
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--color-accent);
+}
+
+::selection {
+  background: rgba(48, 240, 194, 0.35);
+  color: var(--color-bg);
+}

@@ -1,50 +1,35 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+# indevelops Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Precisión guiada por especificaciones
+Toda funcionalidad parte de un documento de especificación producido con Spec Kit; ningún componente React se construye sin la especificación correspondiente y su plan técnico asociado.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Diseño minimalista con serenidad visual
+La UI debe transmitir orden y control: paleta reducida, tipografía consistente, abundante espacio negativo y uso intencional de bloques para resaltar estructura técnica.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Automatización y buenas prácticas
+Los flujos se apoyan en herramientas automatizadas (Spec Kit, linters, formatters) para eliminar ambigüedad entre idea, código y documentación; cualquier tarea manual repetitiva debe documentarse para futura automatización.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Experiencia impulsada por IA
+La narrativa y los componentes deben reforzar que indevelops es un entorno inteligente: secciones que sugieren chat asistido, diagramas o prompts que invitan a preguntar “¿qué es indevelops?”.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+### V. Calidad comprobable
+Cada entrega incluye pruebas mínimas (component tests o UI smoke tests) y verificación de accesibilidad básica (contraste, navegación teclado) antes de desplegar en GitHub Pages.
 
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
+## Diseño y contenido
+- El home es una experiencia hero tipo terminal/retro con un chat central que despierta curiosidad y con CTA implícita para preguntar qué es indevelops.  
+- El tono combina precisión técnica con calidez: copy corto, directo, resaltando “entorno de desarrollo guiado por especificaciones”.  
+- Todo arte visual debe reforzar progreso estructurado (pasos, roadmap, specs, bloques).  
+- El idioma principal es español; términos técnicos pueden mantenerse en inglés si son estándar (e.g., “Spec Kit”).
 
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
+## Flujo de trabajo y entregables
+- Seguir el pipeline Spec Kit: `/speckit.constitution` → `/speckit.specify` → `/speckit.plan` → `/speckit.tasks` → `/speckit.implement`.  
+- Documentar cualquier decisión clave en los archivos `.specify/memory`.  
+- El despliegue objetivo es GitHub Pages; la rama principal debe mantener un build listo para `npm run deploy` (o acción equivalente).  
+- Commits y PRs deben referenciar la sección de la especificación que satisfacen.
 
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
+## Gobernanza
+Esta constitución manda sobre cualquier preferencia individual; cambios requieren una nueva versión documentada en `.specify/memory/constitution.md` junto con fecha y motivo.
 
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
-
-## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
-
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-02-15 | **Last Amended**: 2025-02-15

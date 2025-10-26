@@ -1,0 +1,136 @@
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem;
+  align-items: center;
+}
+
+.kicker {
+  font-size: 0.95rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent-soft);
+  margin-bottom: 1rem;
+}
+
+.headline {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  margin: 0 0 1rem;
+  line-height: 1.1;
+}
+
+.subcopy {
+  max-width: 32rem;
+  color: var(--color-muted);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.panel {
+  background: var(--color-bg-elevated);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(48, 240, 194, 0.2);
+  box-shadow: var(--shadow-soft);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 28rem;
+}
+
+.panelHeader {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.badgeGroup {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.badge {
+  border-radius: 999px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.8rem;
+  border: 1px solid rgba(132, 230, 255, 0.3);
+  color: var(--color-accent-soft);
+}
+
+.chatlog {
+  flex: 1;
+  border-radius: 1rem;
+  border: 1px solid rgba(132, 230, 255, 0.2);
+  padding: 1rem;
+  background: radial-gradient(circle at 10% 0%, rgba(132, 230, 255, 0.12), transparent),
+    rgba(3, 7, 12, 0.9);
+  overflow-y: auto;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+}
+
+.message {
+  margin-bottom: 0.75rem;
+  display: flex;
+  gap: 0.5rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.message:last-child {
+  margin-bottom: 0;
+}
+
+.sender {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-muted);
+}
+
+.thinking {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-accent);
+}
+
+.cta {
+  align-self: flex-start;
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--color-accent);
+  border: none;
+  font-weight: 600;
+  display: inline-flex;
+  gap: 0.5rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.cta span {
+  font-size: 1.2rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 960px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    order: -1;
+  }
+}
