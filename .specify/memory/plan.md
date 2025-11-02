@@ -5,6 +5,7 @@
 - Estilos: CSS Modules o Tailwind? choose CSS Modules for minimal dependency.
 - Estado: `useReducer` para chat (mensajes, input), `useEffect` para animaciones.
 - Despliegue: GitHub Pages usando `gh-pages` package y `npm run deploy`, configurando `vite.config.ts` con `base` correcto.
+- Referencia actualizada en `docs/architecture.md` y fichas de componentes en `docs/components/`.
 
 ## Estructura de carpetas propuesta
 ```

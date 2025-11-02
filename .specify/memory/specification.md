@@ -54,6 +54,7 @@ Desarrolladores/teams técnicos interesados en metodologías rigurosas (Spec Kit
 ## Dependencias
 - Constitución vigente.
 - Setup React + Vite + GitHub Pages (gh-pages o GitHub Actions).
+- Documentación técnica en `docs/` (ver [arquitectura](../../docs/architecture.md) y [componentes](../../docs/components/README.md)).
 
 ## Preguntas abiertas
 - ¿Se integrarán más secciones (features, comunidad) en esta versión?

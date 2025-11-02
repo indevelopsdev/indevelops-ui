@@ -1,11 +1,16 @@
 import { useReducer, useState } from 'react'
-import { getResponse } from '../utils/responses'
+import { getResponse, type ChatReply } from '../utils/responses'
 
 export type ChatMessage = {
   id: string
   sender: 'user' | 'indevelops'
+  kind: 'text' | 'social'
   text: string
   timestamp: number
+  url?: string
+  handle?: string
+  teaser?: string
+  meta?: string
 }
 
 type Action =
@@ -20,7 +25,8 @@ const initialMessages: ChatMessage[] = [
   {
     id: 'intro',
     sender: 'indevelops',
-    text: 'Pregúntame qué es indevelops o cómo ordenamos tus specs.',
+    kind: 'text',
+    text: 'Pregúntame qué es indevelops o cómo puedes participar.',
     timestamp: Date.now(),
   },
 ]
@@ -53,6 +59,7 @@ export function useChatEngine() {
     const outbound: ChatMessage = {
       id: createId(),
       sender: 'user',
+      kind: 'text',
       text: trimmed,
       timestamp: Date.now(),
     }
@@ -64,13 +71,29 @@ export function useChatEngine() {
     const delay = 500 + Math.random() * 400
 
     window.setTimeout(async () => {
-      const replyText = await getResponse(trimmed)
-      const inbound: ChatMessage = {
+      const reply: ChatReply = await getResponse(trimmed)
+      const baseInbound = {
         id: createId(),
-        sender: 'indevelops',
-        text: replyText,
+        sender: 'indevelops' as const,
         timestamp: Date.now(),
       }
+
+      const inbound: ChatMessage =
+        reply.type === 'social'
+          ? {
+              ...baseInbound,
+              kind: 'social',
+              text: reply.message,
+              url: reply.url,
+              handle: reply.handle,
+              teaser: reply.teaser,
+              meta: reply.meta,
+            }
+          : {
+              ...baseInbound,
+              kind: 'text',
+              text: reply.message,
+            }
 
       dispatch({ type: 'append', payload: inbound })
       setIsThinking(false)

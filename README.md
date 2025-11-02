@@ -29,8 +29,16 @@ npm run deploy    # Publica dist/ en GitHub Pages (usa gh-pages)
 - `src/components/RoadmapStrip`: Visualiza el flujo Idea → Spec → Plan → Implementación.
 - `vite.config.ts`: define `base: '/indevelops-ui/'` para que GitHub Pages resuelva rutas.
 
+## Documentación técnica
+- [Overview](docs/overview.md)
+- [Arquitectura](docs/architecture.md)
+- [Componentes](docs/components/README.md)
+- [Flujo Spec Kit](docs/spec-kit/workflow.md)
+- [GitHub Actions & DevOps](docs/devops/github-actions.md)
+
 ## Próximos pasos sugeridos
 1. Conectar `useChatEngine` con el backend/LLM planificado (reemplazar `getResponse` por fetch a la API).
 2. Añadir pruebas (ej. Vitest) para el motor de respuestas y componentes clave.
 3. Configurar un workflow de GitHub Actions que ejecute build + deploy automático a Pages.
-4. Expandir el sitio con secciones de documentación, comunidad o casos de uso manteniendo la guía Spec Kit.
+4. Mantener y ampliar la documentación en `docs/` a medida que la arquitectura evoluciona.
+5. Expandir el sitio con secciones de documentación, comunidad o casos de uso manteniendo la guía Spec Kit.

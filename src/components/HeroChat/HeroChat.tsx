@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
-import { ChatInput } from '../ChatInput/ChatInput'
 import { useChatEngine } from '../../hooks/useChatEngine'
+import { ChatInput } from '../ChatInput/ChatInput'
+import { SocialPreview } from '../SocialPreview/SocialPreview'
 import styles from './HeroChat.module.css'
 
 export function HeroChat() {
@@ -44,7 +45,19 @@ export function HeroChat() {
               <span className={styles.sender}>
                 {message.sender === 'user' ? 'Tú' : 'indevelops'}
               </span>
-              <span>{message.text}</span>
+              {message.kind === 'social' ? (
+                <div className={styles.messageBody}>
+                  <p className={styles.messageText}>{message.text}</p>
+                  <SocialPreview
+                    url={message.url ?? '#'}
+                    handle={message.handle ?? '@in_develops'}
+                    teaser={message.teaser ?? ''}
+                    meta={message.meta ?? 'X'}
+                  />
+                </div>
+              ) : (
+                <p className={styles.messageText}>{message.text}</p>
+              )}
             </div>
           ))}
         </div>

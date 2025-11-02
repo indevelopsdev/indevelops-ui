@@ -21,3 +21,4 @@
 12. Add basic unit test (optional) or at minimum run `npm run build` to ensure bundle passes.
 13. Document instructions in README for running/dev/deploy.
 14. Verify GitHub Pages deploy command locally (dry run or instructions if GH token absent).
+15. Actualizar documentación en `docs/` (overview, arquitectura, componentes) con los cambios realizados.
