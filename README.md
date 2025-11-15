@@ -27,7 +27,7 @@ npm run deploy    # Publica dist/ en GitHub Pages (usa gh-pages)
 - `src/hooks/useChatEngine`: Maneja historial, respuestas y estado “pensando”.
 - `src/utils/responses`: Reglas de respuesta locales, fácilmente reemplazables por una API.
 - `src/components/RoadmapStrip`: Visualiza el flujo Idea → Spec → Plan → Implementación.
-- `vite.config.ts`: define `base: '/indevelops-ui/'` para que GitHub Pages resuelva rutas.
+- `vite.config.ts`: define `base: '/'` para servir el sitio en `https://indevelops.com`.
 
 ## Documentación técnica
 - [Overview](docs/overview.md)

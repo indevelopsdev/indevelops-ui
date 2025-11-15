@@ -58,7 +58,7 @@ src/
 
 ## Build + Deploy
 - Scripts npm: `dev`, `build`, `preview`, `deploy` (usa `gh-pages -d dist`).
-- GitHub Pages config: `vite.config.ts` con `base: "/indevelops-ui/"` (asumiendo repo homónimo).
+- GitHub Pages config: `vite.config.ts` con `base: "/"` para servir en `indevelops.com`.
 
 ## Validaciones
 - ESLint + Prettier? (opcional) – al menos `npm run build`.
