@@ -31,10 +31,20 @@
   margin-bottom: 0.5rem;
 }
 
-.avatar {
+.avatarImage,
+.avatarFallback {
   width: 2.25rem;
   height: 2.25rem;
   border-radius: 0.75rem;
+}
+
+.avatarImage {
+  object-fit: cover;
+  border: 1px solid rgba(132, 230, 255, 0.35);
+  box-shadow: 0 0 12px rgba(48, 240, 194, 0.35);
+}
+
+.avatarFallback {
   background: radial-gradient(circle at 30% 30%, var(--color-accent), rgba(132, 230, 255, 0.4));
   display: flex;
   align-items: center;
@@ -46,9 +56,21 @@
   box-shadow: inset 0 0 12px rgba(48, 240, 194, 0.4);
 }
 
-.handle {
+.identity {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.displayName {
   font-weight: 600;
   font-size: 1.05rem;
+  color: var(--color-text);
+}
+
+.handle {
+  font-size: 0.85rem;
+  color: var(--color-muted);
 }
 
 .teaser {

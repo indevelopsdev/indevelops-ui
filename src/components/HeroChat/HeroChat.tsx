@@ -23,9 +23,7 @@ export function HeroChat() {
           No te explicamos qué es indevelops. Te dejamos preguntarlo.
         </h1>
         <p className={styles.subcopy}>
-          Una experiencia para devs que prefieren precisión antes que humo. indevelops piensa como
-          tú: parte de una especificación, sigue un plan y transforma el código en un producto
-          nítido.
+          indevelops convierte tus preguntas en especificaciones ejecutables y un roadmap claro.
         </p>
         <div className={styles.badgeGroup}>
           <span className={styles.badge}>Spec Kit</span>
@@ -50,9 +48,11 @@ export function HeroChat() {
                   <p className={styles.messageText}>{message.text}</p>
                   <SocialPreview
                     url={message.url ?? '#'}
-                    handle={message.handle ?? '@in_develops'}
+                    name={message.name ?? 'indevelops'}
+                    handle={message.handle ?? '@indevelops_ai'}
                     teaser={message.teaser ?? ''}
                     meta={message.meta ?? 'X'}
+                    avatarUrl={message.avatarUrl}
                   />
                 </div>
               ) : (
@@ -67,16 +67,8 @@ export function HeroChat() {
           onChange={setInputValue}
           onSubmit={sendMessage}
           disabled={isThinking}
-          placeholder="Pregúntanos cómo ordenamos tus specs…"
+          placeholder="Describe lo que querés construir…"
         />
-        <a
-          className={styles.cta}
-          href="https://github.github.io/spec-kit/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Ver cómo funciona <span aria-hidden="true">↗</span>
-        </a>
       </div>
     </section>
   )

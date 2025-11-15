@@ -11,6 +11,8 @@ export type ChatMessage = {
   handle?: string
   teaser?: string
   meta?: string
+  avatarUrl?: string
+  name?: string
 }
 
 type Action =
@@ -88,6 +90,8 @@ export function useChatEngine() {
               handle: reply.handle,
               teaser: reply.teaser,
               meta: reply.meta,
+              avatarUrl: reply.avatarUrl,
+              name: reply.name,
             }
           : {
               ...baseInbound,

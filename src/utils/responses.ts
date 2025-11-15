@@ -14,12 +14,14 @@ const knowledgeBase = {
   roadmap:
     'El flujo se compone de 4 pasos: Idea, Spec, Plan e Implementación. Cada entrega lo respeta.',
   comunidad: {
-    headline: '@in_develops',
-    url: 'https://x.com/in_develops',
+    name: 'indevelops',
+    headline: '@indevelops_ai',
+    url: 'https://x.com/indevelops_ai',
     teaser: 'Seguinos en X para ver el roadmap en tiempo real y preguntar cómo construimos con especificaciones.',
     meta: 'X · indevelops · Spec Kit drops',
     prompt:
       'En X publicamos drops de specs, sesiones en vivo y abrimos preguntas a la comunidad. Sumate si querés co-crear indevelops.',
+    avatarUrl: '/profile.png',
   },
 } as const
 
@@ -28,10 +30,12 @@ export type ChatReply =
   | {
       type: 'social'
       message: string
+      name: string
       url: string
       handle: string
       teaser: string
       meta: string
+      avatarUrl?: string
     }
 
 const clean = (input: string) =>
@@ -98,6 +102,8 @@ export async function getResponse(message: string): Promise<ChatReply> {
       handle: knowledgeBase.comunidad.headline,
       teaser: knowledgeBase.comunidad.teaser,
       meta: knowledgeBase.comunidad.meta,
+      avatarUrl: knowledgeBase.comunidad.avatarUrl,
+      name: knowledgeBase.comunidad.name,
     }
   }
 
