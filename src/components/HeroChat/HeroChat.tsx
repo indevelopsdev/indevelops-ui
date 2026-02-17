@@ -18,17 +18,15 @@ export function HeroChat() {
   return (
     <section className={styles.hero}>
       <div>
-        <p className={styles.kicker}>Specification-Driven Development · IA</p>
-        <h1 className={styles.headline}>
-          No te explicamos qué es indevelops. Te dejamos preguntarlo.
-        </h1>
+        <p className={styles.kicker}>Specification-Driven Development · AI</p>
+        <h1 className={styles.headline}>indevelops</h1>
         <p className={styles.subcopy}>
-          indevelops convierte tus preguntas en especificaciones ejecutables y un roadmap claro.
+          Convierte tus preguntas en especificaciones ejecutables.
         </p>
         <div className={styles.badgeGroup}>
-          <span className={styles.badge}>Spec Kit</span>
+          <span className={styles.badge}>Spec kit</span>
           <span className={styles.badge}>Chat asistido</span>
-          <span className={styles.badge}>Roadmap claro</span>
+          <span className={styles.badge}>Roadmap</span>
         </div>
       </div>
 
@@ -61,7 +59,7 @@ export function HeroChat() {
             </div>
           ))}
         </div>
-        {isThinking && <div className={styles.thinking}>indevelops está pensando…</div>}
+        {isThinking && <div className={styles.thinking}>Procesando…</div>}
         <ChatInput
           value={inputValue}
           onChange={setInputValue}

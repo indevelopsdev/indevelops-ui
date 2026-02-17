@@ -1,55 +1,53 @@
 # indevelops UI Specification
 
 ## Visión
-Crear un home hero que rompa la lógica tradicional de una landing y refuerce la idea de que indevelops es un entorno de desarrollo guiado por especificaciones que “piensa” junto al usuario. La interfaz debe sentirse como un chat retro-centro de comando que provoca curiosidad y motiva al visitante a preguntar “¿qué es indevelops?” en lugar de leer un tocho de contenido.
+Crear un home hero que rompa la lógica tradicional de una landing y refuerce la idea de que indevelops es un entorno de desarrollo guiado por specs que “piensa” junto al usuario. La interfaz debe sentirse como un chat retro-centro de comando que provoca curiosidad y motiva al visitante a interactuar en lugar de leer una pared de texto.
 
 ## Público objetivo
-Desarrolladores/teams técnicos interesados en metodologías rigurosas (Spec Kit, automatización, IA) y personas que valoran claridad estructurada sobre marketing vacío.
+Desarrolladores/teams técnicos interesados en metodologías rigurosas, automatización e IA, y personas que valoran claridad estructurada sobre marketing vacío.
 
 ## Objetivos clave
 1. Transmitir precisión técnica, serenidad visual y control inteligente apenas se carga la página.
-2. Enfatizar que indevelops es “un entorno de desarrollo guiado por especificaciones” y que elimina la brecha entre idea, código y documentación.
-3. Invitar a la interacción mediante un chat central grande estilo retro-terminal que sugiere IA asistiendo el flujo.
+2. Enfatizar que indevelops es un entorno guiado por specs y que reduce la brecha entre idea, código y documentación.
+3. Invitar a la interacción mediante un chat central con tono retro-terminal y foco en IA asistiendo el flujo.
 4. Mostrar señales de progreso estructurado (pasos, roadmap, specs) sin saturar la vista.
-5. Preparar la interfaz para expandirse a más secciones en el futuro (e.g., detalles de plataforma, documentación).
+5. Mantener la interfaz abierta a futuras secciones sin forzar el layout actual.
 
 ## Experiencia del usuario
 - Hero pantalla completa con gradiente oscuro o fondo minimalista.
 - Chat central (card) con tipografía monoespaciada y estilo terminal retro-moderna.
-- Mensaje inicial contundente: “No te explicamos qué es indevelops. Te dejamos preguntarlo.”
-- Campo de input/prompt simulado (no funcional en esta fase) que anima a escribir.
-- Copy auxiliar muy corto (ej. “Entorno de desarrollo guiado por especificaciones · Powered by Spec Kit + IA”).
-- Pequeña barra/roadmap con pasos (“Idea → Spec → Plan → Implementación”) para reforzar estructura.
-- Botón/CTA secundario “Ver cómo funciona” apuntando a una sección futura o placeholder.
-- Footer mínimo con enlace a GitHub Pages / repositorio.
+- Título principal con la marca “indevelops” en tipografía grande.
+- Campo de input/prompt que anima a escribir.
+- Copy auxiliar muy corto con mensaje de valor (sin marketing extendido).
+- Barra/roadmap con pasos para reforzar estructura.
+- Footer mínimo con marca y enlace social si aplica.
 
 ## Contenidos obligatorios
-- Título o mensaje hero con la frase clave anterior.
-- Subtítulo que resuma la propuesta: “indevelops es un entorno inteligente que transforma ideas técnicas en productos reales basándose en especificaciones.”
-- Etiquetas destacando: “Spec Kit”, “Specification-Driven Development”, “IA integrada”.
-- Indicador visual de progreso (4 pasos con etiquetas).
+- Título principal con la marca.
+- Subtítulo que resuma la propuesta (idea → specs → producto).
+- Etiquetas breves destacando precisión técnica e IA (texto sujeto a iteración).
+- Indicador visual de progreso (pasos con etiquetas).
 
 ## Restricciones de diseño
 - Diseño limpio, minimalista, abundante espacio negativo, contraste controlado.
-- Paleta: fondo oscuro + acentos en cian/verde fosforescente + tipografía neutra (sans) combinada con mono para chat.
+- Paleta oscura con acentos fríos; tipografía sans combinada con mono para chat.
 - Accesibilidad: contraste AA, foco visible, estructuras semánticas correctas.
 
 ## Alcance técnico del MVP
 - Aplicación React (Vite) desplegable en GitHub Pages.
-- Componentes previstos: `HeroChat`, `RoadmapStrip`, `Layout`.
-- Responsividad básica (desktop ≥1024px, tablet ≥768px, móvil).
+- Componentes clave de hero, chat y roadmap (nombres internos sujetos a cambio).
+- Responsividad básica (desktop, tablet, móvil).
 - Animaciones suaves permitidas (fade-in, cursor parpadeante) sin impactar performance.
-- Chat funcional básico: el usuario escribe y recibe respuestas predefinidas/heurísticas locales (sin backend). Guardar historial en memoria local para la sesión y mostrarlo en la tarjeta tipo terminal.
+- Chat funcional básico con respuestas locales/heurísticas y memoria de sesión (sin backend).
 
 ## Fuera de alcance (por ahora)
 - Autenticación, dashboards, documentación completa.
-- Backend remoto/LLM reales: esta versión usa respuestas locales, pero la UI y arquitectura deben quedar preparadas para conectar posteriormente con un servicio que reciba el mensaje y devuelva respuestas.
+- Integraciones backend/LLM reales.
 - Persistencia en la nube (solo memoria local de sesión).
 
 ## Métricas de éxito
-- Claridad del mensaje (usuarios entienden en 5 segundos que es una herramienta estructurada e inteligente).
-- Interacción instigada: al menos un CTA visible invita a continuar explorando.
-- LCP < 2s en GitHub Pages y bundle inicial < 250KB.
+- Claridad del mensaje: comprensión rápida de que es una herramienta estructurada e inteligente.
+- Interacción instigada: el chat invita a escribir y genera curiosidad.
 
 ## Dependencias
 - Constitución vigente.
@@ -58,4 +56,4 @@ Desarrolladores/teams técnicos interesados en metodologías rigurosas (Spec Kit
 
 ## Preguntas abiertas
 - ¿Se integrarán más secciones (features, comunidad) en esta versión?
-- ¿Se desea copy multilingüe o solo español?
+- ¿Cuál será el tono final de los textos y el mix de idiomas?

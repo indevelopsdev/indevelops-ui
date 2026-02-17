@@ -7,6 +7,7 @@ Bienvenido/a al espacio técnico del proyecto. Aquí encontrarás la informació
 - [Componentes de interfaz](components/README.md)
 - [Flujo Spec Kit](spec-kit/workflow.md)
 - [DevOps y GitHub Actions](devops/github-actions.md)
+- [Backlog y prioridades](backlog.md)
 
 ## Filosofía del proyecto
 - **Specification-Driven Development:** Toda funcionalidad parte de constitución, especificación, plan y tasks documentados en `.specify/memory/`.

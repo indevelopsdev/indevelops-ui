@@ -28,7 +28,7 @@ const initialMessages: ChatMessage[] = [
     id: 'intro',
     sender: 'indevelops',
     kind: 'text',
-    text: 'Pregúntame qué es indevelops o cómo puedes participar.',
+    text: 'Hola, ¿en qué puedo ayudarte hoy?',
     timestamp: Date.now(),
   },
 ]
@@ -70,7 +70,7 @@ export function useChatEngine() {
     setInputValue('')
     setIsThinking(true)
 
-    const delay = 500 + Math.random() * 400
+    const delay = 900 + Math.random() * 600
 
     window.setTimeout(async () => {
       const reply: ChatReply = await getResponse(trimmed)

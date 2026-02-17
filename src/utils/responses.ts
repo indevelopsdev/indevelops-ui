@@ -1,14 +1,13 @@
 const hints = [
   'Idea → Especificación → Plan → Implementación. Nada fuera de orden.',
-  'Spec Kit mantiene el ADN del proyecto legible y ejecutable.',
-  'Podemos conectar con tu backend más adelante para respuestas en tiempo real.',
+  'Las specs mantienen el ADN del proyecto legible y ejecutable.',
 ]
 
 const knowledgeBase = {
   indevelops:
     'indevelops es un entorno inteligente que transforma ideas técnicas en productos reales siguiendo especificaciones vivas.',
-  specKit:
-    'Spec Kit nos obliga a definir constitución, especificaciones y planes antes de tocar código. Es lo que mantiene la precisión.',
+  specs:
+    'Las specs nos obligan a definir constitución, especificaciones y planes antes de tocar código. Es lo que mantiene la precisión.',
   metodologia:
     'No hacemos “vibe coding”. Cada paso se valida contra la especificación, y la automatización mantiene el foco.',
   roadmap:
@@ -17,8 +16,9 @@ const knowledgeBase = {
     name: 'indevelops',
     headline: '@indevelops_ai',
     url: 'https://x.com/indevelops_ai',
-    teaser: 'Seguinos en X para ver el roadmap en tiempo real y preguntar cómo construimos con especificaciones.',
-    meta: 'X · indevelops · Spec Kit drops',
+    teaser:
+      'Seguinos en X para ver el roadmap en tiempo real y enterarte cómo construir con especificaciones.',
+    meta: 'X · indevelops · specs',
     prompt:
       'En X publicamos drops de specs, sesiones en vivo y abrimos preguntas a la comunidad. Sumate si querés co-crear indevelops.',
     avatarUrl: '/profile.png',
@@ -51,26 +51,27 @@ export async function getResponse(message: string): Promise<ChatReply> {
     return {
       type: 'text',
       message:
-        'Hola. No soy una landing tradicional. Pregunta lo que necesites saber de indevelops.',
+        'Hola. No soy un asistente tradicional. Pregunta lo que necesites saber de indevelops.',
     }
   }
 
   if (normalized.includes('que es') || normalized.includes('qué es')) {
     return {
       type: 'text',
-      message: `${knowledgeBase.indevelops} Pregunta por nuestro roadmap si quieres ver los pasos.`,
+      message:
+        'indevelops es un entorno inteligente que transforma ideas en productos reales siguiendo especificaciones vivas. ¿Quieres saber los pasos?',
     }
   }
 
   if (normalized.includes('spec kit')) {
-    return { type: 'text', message: knowledgeBase.specKit }
+    return { type: 'text', message: knowledgeBase.specs }
   }
 
   if (normalized.includes('como funciona') || normalized.includes('cómo funciona')) {
     return {
       type: 'text',
       message:
-        'Funciona como un copiloto estructurado: defines la intención, Spec Kit genera las piezas y el front las convierte en experiencia. Nada sale sin pasar por la especificación.',
+        'Funciona como un copiloto estructurado: defines la intención, las specs ordenan las piezas y el front las convierte en experiencia. Nada sale sin pasar por la especificación.',
     }
   }
 

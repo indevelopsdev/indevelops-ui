@@ -2,9 +2,9 @@
 
 ## Arquitectura general
 - Stack: React 18 + Vite + TypeScript.
-- Estilos: CSS Modules o Tailwind? choose CSS Modules for minimal dependency.
-- Estado: `useReducer` para chat (mensajes, input), `useEffect` para animaciones.
-- Despliegue: GitHub Pages usando `gh-pages` package y `npm run deploy`, configurando `vite.config.ts` con `base` correcto.
+- Estilos: preferencia por CSS Modules para mantener dependencias livianas.
+- Estado: manejo local para el chat y sus mensajes.
+- Despliegue: GitHub Pages usando `gh-pages` y `npm run deploy`, configurando `vite.config.ts` con `base` correcto según dominio.
 - Referencia actualizada en `docs/architecture.md` y fichas de componentes en `docs/components/`.
 
 ## Estructura de carpetas propuesta
@@ -33,23 +33,21 @@ src/
 ```
 
 ## Lógica del chat
-- `useChatEngine` mantiene historial (`{id, sender, text, timestamp}`) y estado del input.
-- Respuestas generadas por un motor sencillo:
-  - Detectar palabras clave (“qué es indevelops”, “spec kit”, “cómo funciona”, etc.).
-  - Proveer fallback inspiracional resaltando especificaciones.
-  - Añadir retardo simulado (500-800ms) antes de mostrar la respuesta.
-- Preparar punto de extensión: función `sendMessage` que hoy usa reglas locales pero mañana podrá llamar a backend (API fetch) sin reescribir UI.
+- Hook de chat con historial, input y estado de respuesta.
+- Respuestas generadas por un motor sencillo de palabras clave + fallback.
+- Retardo simulado antes de mostrar la respuesta para reforzar “procesando”.
+- Punto de extensión para reemplazar reglas locales por backend cuando sea necesario.
 
 ## Componentes clave
-- `HeroChat`: contenedor principal con título, subcopy, chat log, input y CTA secundario.
-- `ChatInput`: maneja input + submit, muestra placeholder retro (“Escribe tu pregunta…”).
-- `RoadmapStrip`: tira horizontal con pasos “Idea → Spec → Plan → Implementación”.
-- `Layout`: envuelve en fondo oscuro, controla tipografía y responsive spacing.
+- `HeroChat`: contenedor principal con título, subcopy, chat log e input.
+- `ChatInput`: maneja input + submit.
+- `RoadmapStrip`: tira horizontal con pasos.
+- `Layout`: envuelve en fondo, tipografía y spacing responsive.
 
 ## Estilo y animación
-- Paleta: fondo #05060A, texto #E4E7EC, acentos #30F0C2 / #84E6FF.
+- Paleta oscura con acentos fríos.
 - Efectos: cursor parpadeante, glow sutil en bordes del chat, animación de aparición para mensajes.
-- Responsivo: stack vertical en mobile, roadmap en carrusel sencillo si < 480px.
+- Responsivo: stack vertical en mobile y ajustes de layout según breakpoints.
 
 ## Accesibilidad
 - Colores AA, focus ring visibles.
@@ -58,11 +56,11 @@ src/
 
 ## Build + Deploy
 - Scripts npm: `dev`, `build`, `preview`, `deploy` (usa `gh-pages -d dist`).
-- GitHub Pages config: `vite.config.ts` con `base: "/"` para servir en `indevelops.com`.
+- GitHub Pages config: `vite.config.ts` con `base` según dominio/route.
 
 ## Validaciones
-- ESLint + Prettier? (opcional) – al menos `npm run build`.
-- Test ligero: `vitest` snapshot para `useChatEngine`? (podría ser en iteración siguiente; en este MVP se validará con unit simple si tiempo permite).
+- Al menos `npm run build` + revisión rápida de accesibilidad básica.
+- Test ligero opcional en el hook de chat si hay tiempo.
 
 ## Riesgos
 - Sin backend real; asegurarse de desacoplar la lógica.
