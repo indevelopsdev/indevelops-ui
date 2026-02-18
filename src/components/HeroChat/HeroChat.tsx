@@ -19,7 +19,14 @@ export function HeroChat() {
     <section className={styles.hero}>
       <div>
         <p className={styles.kicker}>Specification-Driven Development · AI</p>
-        <h1 className={styles.headline}>indevelops</h1>
+        <div className={styles.brand}>
+          <img
+            className={styles.logo}
+            src="/profile-cropped.png"
+            alt="indevelops"
+          />
+          <h1 className={styles.headline}>indevelops</h1>
+        </div>
         <p className={styles.subcopy}>
           Convierte tus preguntas en especificaciones ejecutables.
         </p>
@@ -65,7 +72,7 @@ export function HeroChat() {
           onChange={setInputValue}
           onSubmit={sendMessage}
           disabled={isThinking}
-          placeholder="Describe lo que querés construir…"
+          placeholder="Pregunta lo que quieras"
         />
       </div>
     </section>
